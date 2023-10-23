@@ -8,15 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/ecom",
         "index": "apps/ecom/src/index.html",
         "main": "apps/ecom/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/ecom/tsconfig.app.json",
-        "assets": ["apps/ecom/src/favicon.ico", "apps/ecom/src/assets"],
-        "styles": ["apps/ecom/src/styles.scss"],
+        "assets": [
+          "apps/ecom/src/favicon.ico",
+          "apps/ecom/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/ecom/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -66,14 +76,21 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/ecom/**/*.ts", "apps/ecom/**/*.html"]
+        "lintFilePatterns": [
+          "apps/ecom/**/*.ts",
+          "apps/ecom/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/ecom/jest.config.ts",
         "passWithNoTests": true
